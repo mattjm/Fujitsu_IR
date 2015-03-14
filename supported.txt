@@ -1,0 +1,19 @@
+This functionality mirrors that of many Fujitsu remotes, but I've confirmed by testing codes on the following remotes:
+
+Fujitsu AR-REG1U
+
+
+I've tested the codes against the following Fujitsu indoor units:
+
+ASU7RLF1
+
+
+
+
+
+The following functions are implemented:
+
+-Heat mode, auto fan speed, temperatures 60F through 88F, in two degree increments.  
+
+
+

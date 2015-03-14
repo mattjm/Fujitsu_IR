@@ -1,0 +1,11 @@
+all temps (a), heat (b), fan speed high (d=1)
+
+A=* B=4 wOn=0 C=0 D=1 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+all temps (a), heat (b), fan speed quiet (d=4)
+
+A=* B=4 wOn=0 C=0 D=4 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+all temps (a), heat (b), fan speed medium (d=2)
+
+A=* B=4 wOn=0 C=0 D=2 E=0 tOff=0 tOn=0 fOff=0 fOn=0
