@@ -1,0 +1,39 @@
+This functionality mirrors that of many Fujitsu remotes, but I've confirmed by testing codes transmitted by the following remotes:
+
+Fujitsu AR-REG1U
+
+
+I've tested the codes against the following Fujitsu indoor units:
+
+ASU7RLF1
+
+
+The following functions are implemented:
+
+-Heat mode, auto, quiet, low, medium, and high fan speeds, temperatures 60F through 76F, in two degree increments.  (Up to 80F supported with auto fan speed).  The units will go up to 88F with the remote but you shouldn't need to set it higher than 76F.  
+
+-Cool mode, auto fan speed, temperatures 64F through 88F.  
+
+-Minimum heat.  Sets to heat mode and 50F, basically a "vacation" mode.  
+
+Coming soon:  
+
+-More fan speeds on cool mode
+-Fan only mode
+-Dry mode
+-Off
+-No plans to implement "auto" mode or swing at the moment.  
+
+Installation:
+
+This will run under a vanilla LIRC install.  I've been using it on a Raspberry Pi with a homebuilt transmitter running off the GPIO pins, but any off the shelf transmitter that's LIRC compatible should work (I don't know if any of these transmitters choke on codes longer than 128 bits--if they do they won't work with these codes).  Once LIRC is running, install the lircd.conf file (or copy contents over if you need other remotes) and use irsend to send the appropriate commands.  The general command form is:
+
+mode-fan_speed-temp
+
+e.g.
+
+heat-auto-68F
+
+You can rename the commands to use Centigrade if you want.  
+
+You can set the Raspberry Pi near your indoor unit and use cron to schedule irsend commands, essentially giving you a programmable thermostat.  

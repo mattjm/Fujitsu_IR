@@ -9,3 +9,11 @@ A=* B=4 wOn=0 C=0 D=4 E=0 tOff=0 tOn=0 fOff=0 fOn=0
 all temps (a), heat (b), fan speed medium (d=2)
 
 A=* B=4 wOn=0 C=0 D=2 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+all temps (a), heat (b), fan speed low (d=3)
+
+A=* B=4 wOn=0 C=0 D=3 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+all temps (a), cool (b=1), fan speed auto (d=0)
+
+A=* B=1 wOn=0 C=0 D=0 E=0 tOff=0 tOn=0 fOff=0 fOn=0
