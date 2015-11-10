@@ -37,3 +37,10 @@ heat-auto-68F
 You can rename the commands to use Centigrade if you want.  
 
 You can set the Raspberry Pi near your indoor unit and use cron to schedule irsend commands, essentially giving you a programmable thermostat.  
+
+Acknowledgements:
+
+Thanks to the good folks on the LIRC mailing list for advice on how to approach this  (particularly  Alec Leamas and Bengt Martensson).  I have liberally used AnalysIR and IrScrutinizer to figure this stuff out and/or generate the appropriate codes.  This document from dabrams on remotecentral.com was also invaluable:
+
+http://old.ercoupe.com/audio/FujitsuIR.pdf
+
