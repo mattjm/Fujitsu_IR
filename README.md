@@ -14,13 +14,13 @@ I've tested the codes against the following Fujitsu indoor units:
 
 The following functions are implemented:
 
-*Heat mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 60F through 76F, in two degree increments.  (Up to 80F supported with auto fan speed).  The units will go up to 88F with the remote but you shouldn't need to set it higher than 76F.  
-*Cool mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 64F through 88F.  
-*Dry mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 64F through 88F.  
-*Fan only mode.  Auto, quiet, low, medium, and high fan speeds.  Temperature doesn't matter in this mode but we send a value of 64F since we have to send something.  
-*Minimum heat.  Sets to heat mode and 50F, basically a "vacation" mode.  
-*Off.  Turns off the unit.  
-*I have no plans to implement "auto" mode or swing at the moment.  
+-Heat mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 60F through 76F, in two degree increments.  (Up to 80F supported with auto fan speed).  The units will go up to 88F with the remote but you shouldn't need to set it higher than 76F.  
+-Cool mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 64F through 88F.  
+-Dry mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 64F through 88F.  
+-Fan only mode.  Auto, quiet, low, medium, and high fan speeds.  Temperature doesn't matter in this mode but we send a value of 64F since we have to send something.  
+-Minimum heat.  Sets to heat mode and 50F, basically a "vacation" mode.  
+-Off.  Turns off the unit.  
+-I have no plans to implement "auto" mode or swing at the moment.  
 
 ##Installation
 
@@ -44,9 +44,11 @@ irsend send_once fujitsu_heat_ac heat-auto-68F
 
 **IMPORTANT**:  For any of the heat mode commands you can send them if the unit is on or off.  For any of the other modes, the unit must be on before you can send commands for that mode.  For convenience, I've provided "cool-on", "dry-on", and "fan-on" commands So you can start in the appropriate mode before selecting the temp and fan speed you want.  cool-on and dry-on turn on the unit with auto fan speed and 88F temp.  fan-on starts the unit with auto fan speed.  Example usage:
 
+
 irsend send_once fujitsu_heat_ac cool-on
 sleep 2
 irsend send_once fujitsu_heat_ac cool-high-70F
+
 
 (sleep puts a two second delay between the commands)
 
@@ -66,11 +68,14 @@ http://old.ercoupe.com/audio/FujitsuIR.pdf
 
 ###*special* commands:
 
-*`dry-on`		Sends command to turn on unit in dry mode
-*`cool-on`		Sends command to turn on unit in cool mode
-*`fan-on`		Sends command to turn on unit in fan mode
-*`turn-off`		Sends command to turn off unit
-*`min-heat`		Sends command for minimum heat mode (works if unit is on or off)
+Name | Description
+------------|-------------
+dry-on	|	Sends command to turn on unit in dry mode
+cool-on	|	Sends command to turn on unit in cool mode
+fan-on	|	Sends command to turn on unit in fan mode
+turn-off	|	Sends command to turn off unit
+min-heat	|	Sends command for minimum heat mode (works if unit is on or off)
+
 
 ###normal commands:
 
