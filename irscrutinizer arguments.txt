@@ -17,3 +17,21 @@ A=* B=4 wOn=0 C=0 D=3 E=0 tOff=0 tOn=0 fOff=0 fOn=0
 all temps (a), cool (b=1), fan speed auto (d=0)
 
 A=* B=1 wOn=0 C=0 D=0 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+2015-12-13
+
+all temps (a), cool (b=1), fan speed high (d=1)
+
+A=* B=1 wOn=0 C=0 D=1 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+all temps (a), cool (b=1), fan speed quiet (d=4)
+
+A=* B=1 wOn=0 C=0 D=4 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+all temps (a), cool (b=1), fan speed medium (d=2)
+
+A=* B=1 wOn=0 C=0 D=2 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+all temps (a), cool (b=1), fan speed low (d=3)
+
+A=* B=1 wOn=0 C=0 D=3 E=0 tOff=0 tOn=0 fOff=0 fOn=0
