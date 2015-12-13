@@ -4,23 +4,23 @@
 
 This LIRC configuration file implements most of the functionality of many of the infrared remotes for Fujitsu ductless (mini-split) heat pumps and air conditioners.  I've confirmed by testing codes transmitted by the following remotes:
 
-*Fujitsu AR-REG1U
+* Fujitsu AR-REG1U
 
 I've tested the codes against the following Fujitsu indoor units:
 
-*ASU7RLF1
+* ASU7RLF1
 
 ##Supported Commands
 
 The following functions are implemented:
 
--Heat mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 60F through 76F, in two degree increments.  (Up to 80F supported with auto fan speed).  The units will go up to 88F with the remote but you shouldn't need to set it higher than 76F.  
--Cool mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 64F through 88F.  
--Dry mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 64F through 88F.  
--Fan only mode.  Auto, quiet, low, medium, and high fan speeds.  Temperature doesn't matter in this mode but we send a value of 64F since we have to send something.  
--Minimum heat.  Sets to heat mode and 50F, basically a "vacation" mode.  
--Off.  Turns off the unit.  
--I have no plans to implement "auto" mode or swing at the moment.  
+* Heat mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 60F through 76F, in two degree increments.  (Up to 80F supported with auto fan speed).  The units will go up to 88F with the remote but you shouldn't need to set it higher than 76F.  
+* Cool mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 64F through 88F.  
+* Dry mode.  Auto, quiet, low, medium, and high fan speeds.  Temperatures 64F through 88F.  
+* Fan only mode.  Auto, quiet, low, medium, and high fan speeds.  Temperature doesn't matter in this mode but we send a value of 64F since we have to send something.  
+* Minimum heat.  Sets to heat mode and 50F, basically a "vacation" mode.  
+* Off.  Turns off the unit.  
+* I have no plans to implement "auto" mode or swing at the moment.  
 
 ##Installation
 
@@ -45,10 +45,11 @@ irsend send_once fujitsu_heat_ac heat-auto-68F
 **IMPORTANT**:  For any of the heat mode commands you can send them if the unit is on or off.  For any of the other modes, the unit must be on before you can send commands for that mode.  For convenience, I've provided "cool-on", "dry-on", and "fan-on" commands So you can start in the appropriate mode before selecting the temp and fan speed you want.  cool-on and dry-on turn on the unit with auto fan speed and 88F temp.  fan-on starts the unit with auto fan speed.  Example usage:
 
 
+```
 irsend send_once fujitsu_heat_ac cool-on
 sleep 2
 irsend send_once fujitsu_heat_ac cool-high-70F
-
+```
 
 (sleep puts a two second delay between the commands)
 
@@ -79,26 +80,27 @@ min-heat	|	Sends command for minimum heat mode (works if unit is on or off)
 
 ###normal commands:
 
-In all commands below, `*fan speed*` is to be replaced with one of the following values:
+In all commands below, *fan speed* is to be replaced with one of the following values:
 
-*auto
-*high
-*medium
-*low
-*quiet
+* auto
+* high
+* medium
+* low
+* quiet
 
-and `*temp*` is to be replaced with one of the following range of values:
+and *temp* is to be replaced with one of the following range of values:
 
-*for dry mode:  64F to 88F
-*for heat mode:  60F to 76F
-*for cool mode: 64F to 88F
+Mode | Temp
+------|-------
+dry | 64F to 88F
+heat | 60F to 76F
+cool | 64F to 88F
 
-example:  heat-auto-68F
+example:  `heat-auto-68F`
 
-*`heat-*fan speed*-*temp*`  Sends command to turn on unit in heat mode with the specified fan speed and temp (works if unit is on or off--if unit is on the command will just change the fan speed and temp as specified)
-
-*`cool-*fan speed*-*temp*`  Sends command to enable cool mode with specified fan speed and temp (unit must already be on)
-
-*`dry-*fan speed*-*temp*`  Sends command to enable dry mode with specified fan speed and temp (unit must already be on)
-
-*`fan-*fan speed*`  Sends command to enable cool mode with specified fan speed (unit must already be on)
+Name | Description
+------------|-------------
+heat-*fan speed*-*temp* | Sends command to turn on unit in heat mode with the specified fan speed and temp (works if unit is on or off--if unit is on the command will just change the fan speed and temp as specified)
+cool-*fan speed*-*temp* | Sends command to enable cool mode with specified fan speed and temp (unit must already be on)
+dry-*fan speed*-*temp* | Sends command to enable dry mode with specified fan speed and temp (unit must already be on)
+fan-*fan speed*-*temp* | Sends command to enable cool mode with specified fan speed (unit must already be on)
