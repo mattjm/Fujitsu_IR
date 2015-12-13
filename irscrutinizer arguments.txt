@@ -35,3 +35,28 @@ A=* B=1 wOn=0 C=0 D=2 E=0 tOff=0 tOn=0 fOff=0 fOn=0
 all temps (a), cool (b=1), fan speed low (d=3)
 
 A=* B=1 wOn=0 C=0 D=3 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+fan only mode:
+
+temp (a=2) doesn't matter, fan only (b=3), fan speed auto (d=0)
+
+A=2 B=3 wOn=0 C=0 D=0 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+turn on modes:
+
+all heat modes seem to come on automatically
+
+fan-on
+temp (a=2) doesn't matter, fan only (b=3), fan speed auto (d=0)
+
+A=2 B=3 wOn=1 C=0 D=0 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+cool-on
+temp (a=14) 88, cool mode (b=1), fan speed auto (d=0)
+
+A=14 B=1 wOn=1 C=0 D=0 E=0 tOff=0 tOn=0 fOff=0 fOn=0
+
+dry-on
+temp (a=14) 88, dry mode (b=2), fan speed auto (d=0)
+
+A=14 B=1 wOn=1 C=0 D=0 E=0 tOff=0 tOn=0 fOff=0 fOn=0
