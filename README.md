@@ -59,7 +59,19 @@ irsend send_once fujitsu_heat_ac cool-high-70F
 
 ##Metric
 
-I am in the US so the temperatures are in F (Sorry...).  You'll have to rename the commands in the remote for C.  The equation to convert is (F - 32)*.55.  If you create a metric version (or some sort of wrapper script) submit a pull request and I will add it to the project.  
+You can use the Celcius commands by using lircd_celcius.conf file instead of lircd.conf.
+
+List all available commands with:
+
+```
+irsend LIST fujitsu_heat_ac ""
+```
+
+Example usage:
+
+```
+irsend send_once fujitsu_heat_ac cool-high-21C
+```
 
 
 
