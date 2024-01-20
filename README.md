@@ -2,6 +2,10 @@
 
 ## Overview
 
+**Update 2024-01-19**:  This has worked pretty well for a while, but you might be better served with my [broadlink remote file](https://github.com/mattjm/Fujitsu_Broadlink).  It supports more commands and features, and doesn't require the separate "on" command for non-heat modes.  That project was made possible by the work here (which in turn was built on the work of others).  It does however require HomeAssistant and a broadlink infrared transmitter.  The code in my broadlink repo could probably be adapted relatively easily to make an updated LIRC remote with the same functionality.
+
+***
+
 This LIRC configuration file implements most of the functionality of many of the infrared remotes for Fujitsu ductless (mini-split) heat pumps and air conditioners.  I've confirmed by testing codes transmitted by the following remotes:
 
 * Fujitsu AR-REG1U
